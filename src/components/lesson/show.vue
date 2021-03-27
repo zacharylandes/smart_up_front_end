@@ -4,12 +4,10 @@
     <h5>Series  Started at {{lesson.start_time}}</h5>
     <h5>Series  Status: {{lesson.status}}</h5>
     <img :src='lesson.image'/>
-    <p>
-      {{lesson.content}}
-    </p>
-    <a @click='openVideo'>Watch this Video</a>
+    <p> {{lesson.content}}</p>
+    <a @click='openVideo' class='link'>Watch a helpful Video</a>
     <span v-if='lesson.next_lesson' @click='reload()'><router-link :to="{path: '/series/' + lesson.series_id + '/lessons/'+ lesson.next_lesson}"><h3> Next Lesson</h3></router-link></span>
-    <a @click="endSeries" v-else ><h3><u>YA DONE!</u></h3></a>
+    <a class='link' @click="endSeries" v-else ><h3>YA DONE!</h3></a>
     <router-link :to="{path: '/series/' + this.$route.params.seriesId}"><h3> Back to series</h3></router-link>
   </div>
 </template>
@@ -24,7 +22,7 @@ export default {
   data () {
     return {
       user: {},
-      backendUrl: 'https://mysterious-crag-77146.herokuapp.com',
+      backendUrl: 'http://localhost:3000',
       lesson: {},
       loaded: false
     }
@@ -34,7 +32,7 @@ export default {
       axios.post(`${this.backendUrl}/end/${this.$route.params.seriesId}`)
         .then((response) => {
           window.location = '/series/' + this.$route.params.seriesId
-          }
+        }
         )
         .catch(e =>
           console.log(e)
@@ -60,10 +58,9 @@ export default {
     init () {
       axios.get(`${this.backendUrl}/series/${this.$route.params.seriesId}/lessons/${this.$route.params.id}.json`)
         .then((response) => {
-          console.log(response.data)
           this.loaded = true
           this.lesson = response.data
-          }
+        }
         )
         .catch(e =>
           console.log(e)
@@ -80,8 +77,12 @@ export default {
 h3 {
   margin: 40px 0 0;
 }
+.link:hover{
+  cursor:pointer;
+  text-decoration: underline;
+}
 img{
-  width:5rem;
+  width:6rem;
 }
 ul {
   list-style-type: none;

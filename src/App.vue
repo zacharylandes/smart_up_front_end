@@ -32,6 +32,6 @@ nav{
  display:flex;
 }
 img{
-  width:6rem;
+  width:10rem;
 }
 </style>

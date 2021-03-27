@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h4>Series:</h4>
+    <h3> Hey Get Smart with Smart up!</h3>
+    <h4>Learn cool stuff with these series:</h4>
     <div v-for='ser in series' :key='ser.id'>
         <router-link :to="{path: '/series/' + ser.id}">{{ser.title}}</router-link>
     </div>
@@ -17,7 +18,7 @@ export default {
   data () {
     return {
       user: {},
-      backendUrl: 'https://mysterious-crag-77146.herokuapp.com',
+      backendUrl: 'http://localhost:3000',
       series: [],
       loaded: false
     }
