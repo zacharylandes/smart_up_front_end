@@ -3,8 +3,6 @@ import Router from 'vue-router'
 import seriesShow from '@/components/series/show'
 import seriesIndex from '@/components/series/index'
 import lessonShow from '@/components/lesson/show'
-import lessonIndex from '@/components/lesson/index'
-
 Vue.use(Router)
 
 export default new Router({
@@ -14,11 +12,6 @@ export default new Router({
       path: '/',
       name: 'home',
       component: seriesIndex
-    },
-    {
-      path: '/series/:seriesId/lesson',
-      name: 'lessonIndex',
-      component: lessonIndex
     },
     {
       path: '/series/:seriesId/lessons/:id',

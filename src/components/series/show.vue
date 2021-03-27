@@ -2,8 +2,8 @@
   <div v-if='loaded'>
     <h3>Series: <u>{{series.title}}</u></h3>
     <h5 v-if='series.status'>Status: {{series.status}}</h5>
-    <h5 v-if='series.status'>Start Time: {{series.start_time}}</h5>
-    <h5 v-if='series.status'>End Time: {{series.end_time}}</h5>
+    <h5 v-if='series.start_time'>Start Time: {{series.start_time}}</h5>
+    <h5 v-if='series.end_time'>End Time: {{series.end_time}}</h5>
     <h3>Lessons:</h3>
       <div v-for='lesson in series.lessons' :key='lesson.id'>
          -{{lesson.title}}-
@@ -22,7 +22,7 @@ export default {
   data () {
     return {
       user: {},
-      backendUrl: 'http://localhost:3000',
+      backendUrl: 'https://mysterious-crag-77146.herokuapp.com/',
       series: {},
       loaded: false
     }
