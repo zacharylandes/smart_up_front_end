@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import seriesShow from '@/components/series/show'
 import seriesIndex from '@/components/series/index'
 import lessonShow from '@/components/lesson/show'
+
 Vue.use(Router)
 
 export default new Router({

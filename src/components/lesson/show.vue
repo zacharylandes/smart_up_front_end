@@ -31,7 +31,7 @@ export default {
     endSeries () {
       axios.post(`${this.backendUrl}/end/${this.$route.params.seriesId}`)
         .then((response) => {
-          window.location = '/series/' + this.$route.params.seriesId
+          window.location = `/series/${this.$route.params.seriesId}`
         }
         )
         .catch(e =>
