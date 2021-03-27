@@ -17,7 +17,7 @@ export default {
   data () {
     return {
       user: {},
-      backendUrl: 'http://localhost:3000',
+      backendUrl: 'https://mysterious-crag-77146.herokuapp.com',
       series: [],
       loaded: false
     }
